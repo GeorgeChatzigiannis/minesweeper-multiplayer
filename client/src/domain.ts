@@ -5,6 +5,7 @@ export class MineNode {
                 public mineIndicator = 0,
                 public flagged = false,
                 public openedBy: String = '',
+                public flaggedBy: String = '',
     ) {
     }
 }
