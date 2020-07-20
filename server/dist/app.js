@@ -1,0 +1,12 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const bodyParser = require("body-parser");
+const cors = require("cors");
+const express = require("express");
+const index_1 = require("./routes/index");
+const app = express();
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+app.use(cors());
+app.use('/', index_1.default);
+exports.default = app;
