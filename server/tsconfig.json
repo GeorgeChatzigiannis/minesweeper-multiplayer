@@ -7,11 +7,13 @@
     "allowUnreachableCode": false,
     "alwaysStrict": true,
     "forceConsistentCasingInFileNames": true,
-    "allowSyntheticDefaultImports": true
+    "allowSyntheticDefaultImports": true,
+    "resolveJsonModule": true
   },
   "include": [
     "/**/*.ts",
-    "*.ts"
+    "*.ts",
+    "*.json"
   ],
   "exclude": [
     "node_modules"

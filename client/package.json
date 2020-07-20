@@ -1,5 +1,6 @@
 {
   "name": "minesweeper-multiplayer-client",
+  "license": "UNLICENSED",
   "version": "0.1.0",
   "private": false,
   "dependencies": {
