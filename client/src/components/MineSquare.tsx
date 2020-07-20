@@ -6,7 +6,7 @@ export const MineSquare = (props: MineProps) => {
     return (
         <button className='mine-button'
                 tabIndex={props.index}
-                onClick={() => props.onLeftClick(mineNode)}
+                onMouseDown={e => props.onMouseDown(e, mineNode)}
         >
             {renderContent(props.mineNode)}
         </button>
@@ -34,5 +34,5 @@ function renderContent(mineNode: MineNode) {
 export interface MineProps {
     index: number;
     mineNode: MineNode,
-    onLeftClick: (mineNode: MineNode) => void;
+    onMouseDown: (e: React.MouseEvent, mineNode:MineNode) => void;
 }

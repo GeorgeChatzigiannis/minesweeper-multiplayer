@@ -12,7 +12,7 @@ export const MineField = (props: MineFieldProps) => (
                             <MineSquare key={`${mineNode.x}-${mineNode.y}`}
                                         index={mineNode.y}
                                         mineNode={mineNode}
-                                        onLeftClick={(mineNode) => props.onLeftClick(mineNode)}
+                                        onMouseDown={(e, mineNode) => props.onMouseDown(e, mineNode)}
                             />
                         )
                     }
@@ -24,6 +24,6 @@ export const MineField = (props: MineFieldProps) => (
 
 export interface MineFieldProps {
     mineNodes: Array<Array<MineNode>>,
-    onLeftClick: (mineNode:MineNode) => void;
+    onMouseDown: (e: React.MouseEvent, mineNode:MineNode) => void;
 }
 

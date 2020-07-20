@@ -24,6 +24,9 @@ class App extends React.Component<AppProps, AppState> {
     }
 
     componentDidMount() {
+        document.addEventListener('contextmenu', (e) => {
+            e.preventDefault();
+        });
         this.getGridData()
             .then(res => this.setState({ mineNodes: res }))
             .catch(err => console.log(err))
@@ -46,8 +49,8 @@ class App extends React.Component<AppProps, AppState> {
         return body
     }
 
-    public async onMineNodeLeftClick(mineNode: MineNode) {
-        if (this.controlDown) {
+    public async onMineNodeMouseDown(evt: React.MouseEvent, mineNode: MineNode) {
+        if ((evt.button === 0 && this.controlDown) || evt.button === 2) {
             this.postMineNodeFlagged(mineNode)
                 .then(res => this.setState({ mineNodes: res, player: mineNode.flaggedBy }))
                 .catch(err => console.log(err))
@@ -98,7 +101,7 @@ class App extends React.Component<AppProps, AppState> {
             <div className="game">
                 <MineField
                     mineNodes={this.state.mineNodes}
-                    onLeftClick={(mineNode: MineNode) => this.onMineNodeLeftClick(mineNode)}
+                    onMouseDown={(e: React.MouseEvent, mineNode: MineNode) => this.onMineNodeMouseDown(e, mineNode)}
                 />
             </div>
         )
