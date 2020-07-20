@@ -3,4 +3,5 @@ node_modules/
 
 # Jetbrains IntelliJ
 .idea/
-/.idea/
+
+**/*.log
