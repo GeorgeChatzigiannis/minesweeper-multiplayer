@@ -1,6 +1,6 @@
 # Minesweeper Multiplayer
 
-A React and Node js Express minesweeper multiplayer game.
+A Typescript React and NodeJS Express minesweeper multiplayer game
 
 ## Installation
 
@@ -14,6 +14,20 @@ or (without yarn)
 
 ```bash
 npm install
+```
+
+## Start
+
+Both on client and server folders run
+
+```bash
+yarn start
+```
+
+or (without yarn)
+
+```bash
+npm start
 ```
 
 ## Contributing
