@@ -93,7 +93,7 @@ class App extends React.Component<AppProps, AppState> {
         if (!this.state.player) {
             return 'Player 1'
         }
-        return this.state.player === 'Player 1' ? 'Player 2' : this.state.player
+        return this.state.player === 'Player 1' ? 'Player 2' : 'Player 1'
     }
 
     public render() {
